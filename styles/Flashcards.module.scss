@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 16px;
+  min-height: 100vh;
+  background-image: url('../public//background.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.buttonsContainer {
+  display: flex;
+  column-gap: 16px;
+
+  // buttonsContainerVisibilityHidden
+  &VisibilityHidden {
+    visibility: hidden;
+  }
+}
+
+.button {
+  border: none;
+  border-radius: 48px;
+  padding: 8px 48px;
+  background-color: #fff;
+  color: #000000;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+
+  // buttonSecondary
+  &Secondary {
+    background-color: #1745f9;
+    color: #ffffff;
+  }
+}
+
+.flashcardsImage {
+  height: 175px;
+  width: 175px;
+}
+
+.text {
+  color: #ffffff;
+  margin: 0;
+}
+
+.textFontWeightBold {
+  font-size: 24px;
+  font-weight: 700;
+}

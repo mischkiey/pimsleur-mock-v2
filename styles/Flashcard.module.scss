@@ -1,0 +1,90 @@
+$container-height: 400px;
+
+.container {
+  height: $container-height;
+  width: calc($container-height * .9);
+  background-color: transparent;
+  text-align: center;
+  perspective: 1000px;
+}
+
+.innerContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+
+  // innerContainerTransformRotate
+  &TransformRotate {
+    transform: rotateY(180deg);
+
+    .back, .button {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.front,
+.back {
+  display: flex;
+  flex-flow: column nowrap;  
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  padding: 16px;
+  position: absolute;
+  background-color: #fff;
+  backface-visibility: hidden;
+}  
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 4px 0;
+
+  &Heading {
+    color: #b2b2b2;
+    flex: 1;
+    margin: 0;
+  }
+
+  &SaveIcon {
+    margin-left: auto;
+  }
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  overflow: scroll;
+
+  // bodyText
+  &Text {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+.button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+}
